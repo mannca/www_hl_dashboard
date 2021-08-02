@@ -19,8 +19,8 @@ def get_data():
     else:
         #Load from GCS bucket
         storage_client = storage.Client()
-        bucket = storage_client.bucket('wra_what_women_want')
-        blob = bucket.blob('data.pkl')
+        bucket = storage_client.bucket('wra_www_health_literacy')
+        blob = bucket.blob('hl_data_final.pkl')
         mybytes = blob.download_as_bytes()
         df_responses = pkl.loads(mybytes)
 
